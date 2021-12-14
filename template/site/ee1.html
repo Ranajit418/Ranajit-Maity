@@ -1,0 +1,29 @@
+{% extends 'core\homeBase.html' %}
+{%load static %}
+{% block title %}EE{% endblock title %}
+{% block content %}
+<div class="wrapper">
+  <div class="container">
+    
+      
+      <h1><b>Electrical Engineering:-</b></h1>
+       {% for i in ee1 %}
+<div class="col-lg-4 col-md-4 col-sm-4">
+<div class="thumbnail">
+
+
+<div class="caption">
+
+<h4>{{i.headlines|truncatewords:20}}</h4></a>
+<img src="{{i.img.url}}" alt="Nature" >
+{{i.details|safe|truncatewords:300}}
+
+</div>
+</div>
+</div>
+{% empty %}
+<div>
+<h1>No News Found, may be cdc not approved any news</h1>
+</div>
+{% endfor %}      
+{% endblock content %}
